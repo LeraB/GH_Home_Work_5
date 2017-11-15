@@ -27,6 +27,15 @@ gulp.task('styles', function () {
         .pipe(autoprefixer())
         .pipe(rebaseUrls())
         .pipe(sourcemaps.write())
+        .pipe(gulp.dest('./css'))});
+    gulp.task('sty', function () {
+    return gulp.src('./Material/sass/materialize.scss')
+        .pipe(plumber({ errorHandler: handleError }))
+        .pipe(sourcemaps.init())
+        .pipe(scss({outputStyle: 'compressed', includePaths: SASS_INCLUDE_PATHS}))
+        .pipe(autoprefixer())
+        .pipe(rebaseUrls())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('./css'));
 });
 gulp.task('js', function() {
@@ -42,6 +51,7 @@ gulp.task('js', function() {
 
 gulp.task('watch', ['styles', 'js'], function () {
     gulp.watch('./sass/**/*.scss', ['styles']);
+    gulp.watch('./Material/sass/**/*.scss', ['styles']);
     gulp.watch('./source-js/**/*.js', ['js']);
 });
 

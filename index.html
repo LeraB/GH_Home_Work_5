@@ -4,19 +4,28 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+
+    <!--Import materialize.css-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
     <link rel="stylesheet" href="css/main.css">
 <body>
 <header>
 <div id="input-block" class="input-block">
-    <input type="text" id="input-form">
-    <input type="button" id="add">
+    <input type="text" id="input-form" placeholder="Todo...">
+    <a id="add" class="btn-floating btn-large">
+        <i class="large material-icons">mode_edit</i>
+    </a>
 </div>
 </header>
 <main>
-    <ul id="list-item">
+    <ul id="list_todo" class="list">
 
     </ul>
+    <ul id="list_complete" class="list">
 
+    </ul>
 </main>
 <footer>
 
